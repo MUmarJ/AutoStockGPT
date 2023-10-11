@@ -1,8 +1,8 @@
 # StockGPT
-Predict Stock movements with GPT-4 or GPT-3.5
+Predict Stock movements by scoring trendy article sentiments with GPT
 inspired by this paper: https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4412788
 
-### Currently Untested!
+This is a forked version with fixed depreciates of https://github.com/d3n7/StockGPT
 
 # DISCLAIMER
 Please only use this to see how it correlates to stock movements rather than use it to invest.
@@ -15,12 +15,9 @@ It generates the reports for you on each company's healdines, in the form of a .
 
 # How to use it
 1. If you haven't installed the dependencies already, run, ```pip install -r requirements.txt```
-2. If you haven't already, put your OpenAI api token in the file called auth.txt
+2. Put your OpenAI api token in .env (copy .env.sample and rename it to .env, add there)
 3. Put a list of companies you want to track in companies.txt
-4. Run ```python sgpt.py -h``` to see your options, then run the command as you want.
-
-# Examples
-```python sgpt.py -t -c``` gpt-3.5-turbo, sending the headlines in a batch (for minimum cost)
+4. Run ```python app.py -h``` to see your options, then run the command as you want.
 
 <img width="257" alt="Screen Shot 2023-04-22 at 4 07 07 AM" src="https://user-images.githubusercontent.com/29033313/233757108-6ddd34af-e3df-4bb4-a71c-34519166e785.png">
 
@@ -36,5 +33,4 @@ Stock movements the next day:
 ```optional arguments:
   -h, --help            show this help message and exit
   -t, --turbo           use gpt-3.5-turbo instead of gpt-4
-  -c, --combined        send and receive all the headlines in bulk (cheaper but probabaly less good)
   -T TEMP, --temp TEMP  temperature (variability) of the model. a value between 0.0 and 1.0 (default: 0.3)```
